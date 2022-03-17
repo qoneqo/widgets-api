@@ -44,6 +44,7 @@ router.get('/chart_line_series', (req, res, next) => {
   res.json({
     "widget_type": "chart_line_series",
     "widget_title": "Trendline Chart",
+    "widget_width": 12,
     "widget_subtitle": "",
     "widget_data": {
       "chart_categories": [
@@ -90,6 +91,7 @@ router.get('/chart_bar_series', (req, res, next) => {
   res.json({
     "widget_type": "chart_bar_series",
     "widget_title": "Sentiment",
+    "widget_width": 12,
     "widget_subtitle": "",
     "widget_data": {
       "chart_categories": [
@@ -127,6 +129,7 @@ router.get('/chart_column_series', (req, res, next) => {
   res.json({
     "widget_type": "chart_column_series",
     "widget_title": "Post Sentiment",
+    "widget_width": 12,
     "widget_subtitle": "",
     "widget_data": {
       "chart_categories": [
