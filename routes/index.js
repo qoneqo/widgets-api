@@ -10,32 +10,27 @@ router.get('/lists-endpoint', (req, res, next) => {
     {
       "title": "Title A",
       "type": "chart_line_series",
-      "width": 12,
       "link": "http://localhost:9999/chart_line_series",
     },
     {
       "title": "Title B",
       "type": "chart_bar_series",
-      "width": 12,
       "link": "http://localhost:9999/chart_bar_series",
     },
     {
       "title": "Title C",
       "type": "chart_column_series",
-      "width": 12,
       "link": "http://localhost:9999/chart_column_series",
     },
     {
       "title": "Title D",
-      "type": "chart_bar_series",
-      "width": 12,
-      "link": "http://localhost:9999/chart_bar_series",
+      "type": "chart_bar",
+      "link": "http://localhost:9999/chart_bar",
     },
     {
       "title": "Title E",
-      "type": "chart_column_series",
-      "width": 12,
-      "link": "http://localhost:9999/chart_column_series",
+      "type": "chart_column",
+      "link": "http://localhost:9999/chart_column",
     },
   ])
 })
@@ -44,7 +39,7 @@ router.get('/chart_line_series', (req, res, next) => {
   res.json({
     "widget_type": "chart_line_series",
     "widget_title": "Trendline Chart",
-    "widget_width": 12,
+    "widget_width": 6,
     "widget_subtitle": "",
     "widget_data": {
       "chart_categories": [
@@ -91,7 +86,7 @@ router.get('/chart_bar_series', (req, res, next) => {
   res.json({
     "widget_type": "chart_bar_series",
     "widget_title": "Sentiment",
-    "widget_width": 12,
+    "widget_width": 6,
     "widget_subtitle": "",
     "widget_data": {
       "chart_categories": [
@@ -129,7 +124,7 @@ router.get('/chart_column_series', (req, res, next) => {
   res.json({
     "widget_type": "chart_column_series",
     "widget_title": "Post Sentiment",
-    "widget_width": 12,
+    "widget_width": 4,
     "widget_subtitle": "",
     "widget_data": {
       "chart_categories": [
@@ -160,6 +155,38 @@ router.get('/chart_column_series', (req, res, next) => {
       "xAxis_title": "",
       "yAxis_title": ""
     }
+  });
+})
+
+router.get('/chart_bar', (req, res, next) => {
+  res.json(
+    {
+      "widget_type": "chart_bar",
+      "widget_title": "Angka Kematian Bayi (AKB) per 1000 keluarga",
+      "widget_subtitle": "IKK 1.1",
+      "widget_width": 4,
+      "widget_data": {
+        "chart_categories": ["2017", "2018", "2019", "2020", "2021", "2022"],
+        "chart_data": [25, 40, 102, 40, 50, 78],
+        "xAxis_title": "Tahun",
+        "yAxis_title": "Rasio"
+      }
+  })
+})
+
+router.get('/chart_column', (req, res, next) => {
+  res.json(
+    {
+      "widget_type": "chart_column",
+      "widget_title": "Angka Kematian Bayi (AKB) per 1000 keluarga",
+      "widget_subtitle": "IKK 1.1",
+      "widget_width": 4,
+      "widget_data": {
+        "chart_categories": ["2017", "2018", "2019", "2020", "2021", "2022"],
+        "chart_data": [25, 40, 102, 40, 50, 78],
+        "xAxis_title": "Tahun",
+        "yAxis_title": "Rasio"
+      }
   });
 })
 module.exports = router;
